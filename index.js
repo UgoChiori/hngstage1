@@ -62,7 +62,7 @@ const daysOfWeek = [
     const formattedHours = (hours % 12) || 12; // Convert to 12-hour format
     const formattedSeconds = date.getUTCSeconds().toString().padStart(2, '0');
   
-    return `${formattedHours}:${minutes} ${formattedSeconds} ${amPm} GMT +1`;
+    return `${formattedHours}:${minutes}:${formattedSeconds} ${amPm} GMT +1`;
   }
   
   // Function to update the current day of the week and UTC time
