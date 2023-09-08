@@ -16,7 +16,7 @@ h1 {
     font-weight: 700;
     line-height: 1.5;
     font-family: cursive;
-  
+
 }
 
 img {
@@ -33,6 +33,6 @@ img {
     height: 100vh;
 }
 
-.container > * {
+.container>* {
     margin: 10px;
 }
