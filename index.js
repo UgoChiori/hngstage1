@@ -15,10 +15,10 @@ const daysOfWeek = [
   function formatTime(timestamp) {
     const date = new Date(timestamp);
     const hours = date.getUTCHours();
-    const minutes = date.getUTCMinutes().toString().padStart(2, '0');
-    const amPm = hours >= 12 ? 'PM' : 'AM';
-    const formattedHours = (hours % 12) || 12; // Convert to 12-hour format
-    const formattedSeconds = date.getUTCSeconds().toString().padStart(2, '0');
+    const minutes = date.getUTCMinutes().toString().padStart(2, "0");
+    const amPm = hours >= 12 ? "PM" : "AM";
+    const formattedHours = hours % 12 || 12; // Convert to 12-hour format
+    const formattedSeconds = date.getUTCSeconds().toString().padStart(2, "0");
   
     return `${formattedHours}:${minutes}:${formattedSeconds} ${amPm} GMT +1`;
   }
@@ -27,11 +27,9 @@ const daysOfWeek = [
   function updateDateTime() {
     const now = new Date();
     const dayOfWeek = daysOfWeek[now.getUTCDay()];
-    
+  
     // Adjust the timestamp for GMT +1 (1 hour ahead of UTC)
     now.setHours(now.getHours() + 1);
-   
-    
   
     const utcTime = formatTime(now.getTime());
   
@@ -42,3 +40,4 @@ const daysOfWeek = [
   // Update the date and time immediately and then every second
   updateDateTime();
   setInterval(updateDateTime, 1000);
+  
